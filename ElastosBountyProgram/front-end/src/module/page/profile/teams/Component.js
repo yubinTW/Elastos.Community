@@ -243,7 +243,7 @@ export default class extends StandardPage {
                 content: team.profile.description,
                 owner: team.owner,
                 id: team._id,
-                status: team.status
+                status: team.status || TEAM_STATUS.ACTIVE
             }
         })
 

@@ -1,7 +1,6 @@
 import {createContainer} from '@/util'
 import Component from './Component'
 import TeamService from '@/service/TeamService'
-import { message } from 'antd'
 
 export default createContainer(Component, (state) => {
     let page = 'PUBLIC' // default
@@ -31,7 +30,7 @@ export default createContainer(Component, (state) => {
         resetTeamDetail() {
             return teamService.resetTeamDetail()
         },
-
+        
         async closeTeam(teamId) {
             try {
                 await teamService.closeTeam(teamId)

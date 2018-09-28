@@ -359,7 +359,7 @@ class C extends BaseComponent {
             </div>
         )
     }
-
+    
     changeStatusActive() {
         this.setState({
             status: TEAM_STATUS.ACTIVE

@@ -161,7 +161,7 @@ export default class extends Base {
 
         return db_team.findById(teamId)
     }
-
+    
     public async addCandidate(param): Promise<boolean>{
         const {teamId, userId, applyMsg} = param
         const doc: any = {

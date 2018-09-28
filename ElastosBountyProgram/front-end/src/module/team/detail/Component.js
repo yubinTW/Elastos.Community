@@ -82,6 +82,7 @@ class C extends BaseComponent {
         const teamSize = _.size(_.filter(detail.members, { status: TEAM_USER_STATUS.NORMAL }))
         const description = detail.profile.description || ''
         const leaderImage = detail.owner.profile.avatar || ''
+        const status = detail.status || TEAM_STATUS.ACTIVE
 
         const recruiting_el = (
             <div>
@@ -93,8 +94,6 @@ class C extends BaseComponent {
                 </span>
             </div>
         )
-
-        const status = detail.status
 
         return ((status == TEAM_STATUS.ACTIVE || status == TEAM_STATUS.CLOSED) || (this.isTeamOwner && status == TEAM_STATUS.DRAFT)) && (
             <div>
@@ -300,7 +299,7 @@ class C extends BaseComponent {
                     </Button>
                 </Popconfirm>
             )
-            : (status == TEAM_STATUS.ACTIVE) && (
+            : (status == TEAM_STATUS.ACTIVE || hasApplied) && (
                 <Button disabled={hasApplied} type="primary" onClick={() => this.setState({ applying: true })}>
                     {hasApplied
                         ? I18N.get('project.detail.popup.applied')

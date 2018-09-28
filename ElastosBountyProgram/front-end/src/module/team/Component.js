@@ -48,7 +48,7 @@ export default class extends BaseComponent {
                     {this.state.editing ? I18N.get('.cancel') : I18N.get('.edit')}
                 </Button>
             </div>
-            <div className="pull-right right-align btn-margin">
+            <div className="pull-right right-align status-btn">
                 {this.props.team.status == TEAM_STATUS.ACTIVE && <Button loading={this.props.loading} onClick={this.closeTeam.bind(this)}>
                     {I18N.get('team.detail.status.closed')}
                 </Button>}
